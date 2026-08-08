@@ -1,316 +1,1099 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One World</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+<meta name="description" content="One World - منصة عالمية تجمع الخدمات التي يحتاجها الإنسان في مكان واحد">
+<title>One World | عالم واحد</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            color: #172033;
-        }
+:root{
+ --bg:#07111f;
+ --bg2:#0d1b2e;
+ --card:#10243a;
+ --card2:#132c46;
+ --text:#f5f8fc;
+ --muted:#9fb0c4;
+ --primary:#35c2ff;
+ --secondary:#6c63ff;
+ --success:#28d17c;
+ --gold:#ffc857;
+ --danger:#ff5c70;
+ --border:rgba(255,255,255,.09);
+}
 
-        header {
-            background: #ffffff;
-            padding: 18px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #e5e7eb;
-        }
+html{scroll-behavior:smooth}
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
+body{
+ font-family:Arial,Tahoma,sans-serif;
+ background:
+ radial-gradient(circle at 10% 10%,rgba(53,194,255,.13),transparent 30%),
+ radial-gradient(circle at 90% 20%,rgba(108,99,255,.15),transparent 30%),
+ var(--bg);
+ color:var(--text);
+ line-height:1.6;
+}
 
-        .hero {
-            padding: 45px 20px;
-            text-align: center;
-            background: #172033;
-            color: white;
-        }
+button,input,select{font:inherit}
 
-        .hero h1 {
-            font-size: 38px;
-            margin: 0 0 15px;
-        }
+button{
+ cursor:pointer;
+ border:0;
+}
 
-        .hero p {
-            font-size: 17px;
-            line-height: 1.6;
-            margin: 0 auto 25px;
-            max-width: 600px;
-        }
+a{
+ color:inherit;
+ text-decoration:none;
+}
 
-        .search {
-            width: 100%;
-            max-width: 600px;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-        }
+/* HEADER */
 
-        .services {
-            padding: 30px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+header{
+ position:sticky;
+ top:0;
+ z-index:1000;
+ background:rgba(7,17,31,.88);
+ backdrop-filter:blur(18px);
+ border-bottom:1px solid var(--border);
+}
 
-        .services h2 {
-            text-align: center;
-            margin-bottom: 25px;
-        }
+.nav{
+ max-width:1250px;
+ margin:auto;
+ padding:14px 20px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:15px;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 15px;
-        }
+.logo{
+ display:flex;
+ align-items:center;
+ gap:10px;
+ font-size:22px;
+ font-weight:900;
+}
 
-        .card {
-            background: white;
-            padding: 22px 12px;
-            border-radius: 14px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
+.logo-mark{
+ width:42px;
+ height:42px;
+ border-radius:14px;
+ display:grid;
+ place-items:center;
+ background:linear-gradient(135deg,var(--primary),var(--secondary));
+ box-shadow:0 10px 30px rgba(53,194,255,.25);
+}
 
-        .card:hover {
-            transform: translateY(-3px);
-        }
+.nav-links{
+ display:flex;
+ gap:18px;
+ align-items:center;
+}
 
-        .icon {
-            font-size: 32px;
-            display: block;
-            margin-bottom: 10px;
-        }
+.nav-links a{
+ color:var(--muted);
+ font-size:14px;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            color: #6b7280;
-        }
-    </style>
+.nav-links a:hover{color:white}
+
+.nav-actions{
+ display:flex;
+ gap:8px;
+}
+
+.icon-btn{
+ width:42px;
+ height:42px;
+ border-radius:12px;
+ background:var(--card);
+ color:white;
+ border:1px solid var(--border);
+}
+
+/* HERO */
+
+.hero{
+ max-width:1250px;
+ margin:auto;
+ padding:75px 20px 50px;
+ display:grid;
+ grid-template-columns:1.25fr .75fr;
+ gap:40px;
+ align-items:center;
+}
+
+.badge{
+ display:inline-flex;
+ padding:7px 12px;
+ border-radius:30px;
+ background:rgba(53,194,255,.1);
+ color:var(--primary);
+ border:1px solid rgba(53,194,255,.2);
+ font-size:13px;
+ margin-bottom:18px;
+}
+
+.hero h1{
+ font-size:clamp(42px,7vw,78px);
+ line-height:1;
+ margin-bottom:22px;
+ letter-spacing:-3px;
+}
+
+.gradient{
+ background:linear-gradient(90deg,var(--primary),#fff,var(--secondary));
+ -webkit-background-clip:text;
+ color:transparent;
+}
+
+.hero p{
+ color:var(--muted);
+ font-size:18px;
+ max-width:650px;
+ margin-bottom:28px;
+}
+
+.search-box{
+ background:rgba(255,255,255,.06);
+ border:1px solid var(--border);
+ padding:8px;
+ border-radius:18px;
+ display:flex;
+ max-width:650px;
+ box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.search-box input{
+ flex:1;
+ min-width:0;
+ background:transparent;
+ border:0;
+ outline:0;
+ color:white;
+ padding:14px;
+}
+
+.search-box button{
+ padding:13px 22px;
+ border-radius:13px;
+ background:linear-gradient(135deg,var(--primary),var(--secondary));
+ color:white;
+ font-weight:bold;
+}
+
+.hero-buttons{
+ display:flex;
+ gap:12px;
+ flex-wrap:wrap;
+ margin-top:18px;
+}
+
+.primary-btn,.secondary-btn{
+ padding:13px 20px;
+ border-radius:13px;
+ font-weight:bold;
+}
+
+.primary-btn{
+ background:linear-gradient(135deg,var(--primary),var(--secondary));
+ color:white;
+}
+
+.secondary-btn{
+ background:var(--card);
+ color:white;
+ border:1px solid var(--border);
+}
+
+/* WORLD CARD */
+
+.world-card{
+ min-height:380px;
+ border:1px solid var(--border);
+ border-radius:30px;
+ background:
+ radial-gradient(circle at 50% 45%,rgba(53,194,255,.2),transparent 38%),
+ linear-gradient(145deg,#102c47,#0a1728);
+ display:grid;
+ place-items:center;
+ position:relative;
+ overflow:hidden;
+}
+
+.globe{
+ width:240px;
+ height:240px;
+ border-radius:50%;
+ border:2px solid rgba(53,194,255,.6);
+ box-shadow:
+ 0 0 50px rgba(53,194,255,.25),
+ inset 0 0 40px rgba(108,99,255,.3);
+ display:grid;
+ place-items:center;
+ font-size:100px;
+ animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+ 50%{transform:translateY(-12px)}
+}
+
+.floating{
+ position:absolute;
+ padding:9px 13px;
+ border-radius:14px;
+ background:rgba(13,27,46,.9);
+ border:1px solid var(--border);
+ font-size:13px;
+}
+
+.f1{top:15%;right:8%}
+.f2{bottom:18%;left:8%}
+.f3{top:50%;left:3%}
+.f4{bottom:8%;right:20%}
+
+/* SECTIONS */
+
+section{
+ max-width:1250px;
+ margin:auto;
+ padding:55px 20px;
+}
+
+.section-head{
+ display:flex;
+ align-items:end;
+ justify-content:space-between;
+ gap:20px;
+ margin-bottom:25px;
+}
+
+.section-head h2{
+ font-size:30px;
+}
+
+.section-head p{
+ color:var(--muted);
+ font-size:14px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:15px;
+}
+
+.card{
+ background:linear-gradient(145deg,rgba(19,44,70,.95),rgba(10,25,42,.95));
+ border:1px solid var(--border);
+ border-radius:20px;
+ padding:22px;
+ transition:.25s;
+ position:relative;
+ overflow:hidden;
+}
+
+.card:hover{
+ transform:translateY(-5px);
+ border-color:rgba(53,194,255,.35);
+ box-shadow:0 18px 45px rgba(0,0,0,.2);
+}
+
+.card-icon{
+ width:50px;
+ height:50px;
+ display:grid;
+ place-items:center;
+ border-radius:15px;
+ background:rgba(255,255,255,.06);
+ font-size:25px;
+ margin-bottom:15px;
+}
+
+.card h3{
+ font-size:17px;
+ margin-bottom:7px;
+}
+
+.card p{
+ color:var(--muted);
+ font-size:13px;
+}
+
+.card button{
+ margin-top:15px;
+ padding:9px 13px;
+ border-radius:10px;
+ background:rgba(53,194,255,.1);
+ color:var(--primary);
+ border:1px solid rgba(53,194,255,.15);
+}
+
+/* FEATURED */
+
+.featured{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:18px;
+}
+
+.feature-card{
+ min-height:230px;
+ border-radius:24px;
+ padding:28px;
+ border:1px solid var(--border);
+ background:linear-gradient(135deg,#152f4a,#101a31);
+}
+
+.feature-card .big{
+ font-size:45px;
+ margin-bottom:15px;
+}
+
+.feature-card h3{
+ font-size:23px;
+ margin-bottom:8px;
+}
+
+.feature-card p{
+ color:var(--muted);
+}
+
+/* AI */
+
+.ai{
+ margin:20px auto;
+ max-width:1250px;
+ padding:45px 20px;
+}
+
+.ai-box{
+ border-radius:30px;
+ padding:40px;
+ background:
+ radial-gradient(circle at 80% 20%,rgba(108,99,255,.25),transparent 35%),
+ linear-gradient(135deg,#102d4a,#17153a);
+ border:1px solid rgba(108,99,255,.3);
+ display:grid;
+ grid-template-columns:1fr auto;
+ align-items:center;
+ gap:30px;
+}
+
+.ai-box h2{
+ font-size:35px;
+ margin-bottom:10px;
+}
+
+.ai-box p{
+ color:var(--muted);
+ max-width:650px;
+}
+
+.ai-button{
+ padding:16px 24px;
+ border-radius:15px;
+ background:linear-gradient(135deg,var(--secondary),var(--primary));
+ color:white;
+ font-weight:bold;
+}
+
+/* QUICK */
+
+.quick{
+ display:flex;
+ gap:10px;
+ overflow:auto;
+ padding-bottom:5px;
+}
+
+.quick-item{
+ flex:0 0 auto;
+ padding:12px 16px;
+ background:var(--card);
+ border:1px solid var(--border);
+ border-radius:14px;
+ color:white;
+}
+
+/* STATS */
+
+.stats{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:15px;
+}
+
+.stat{
+ text-align:center;
+ padding:25px;
+ background:rgba(255,255,255,.035);
+ border:1px solid var(--border);
+ border-radius:18px;
+}
+
+.stat strong{
+ display:block;
+ font-size:30px;
+ color:var(--primary);
+}
+
+.stat span{
+ color:var(--muted);
+ font-size:13px;
+}
+
+/* FOOTER */
+
+footer{
+ margin-top:50px;
+ border-top:1px solid var(--border);
+ background:#050d17;
+}
+
+.footer{
+ max-width:1250px;
+ margin:auto;
+ padding:45px 20px;
+ display:grid;
+ grid-template-columns:1.5fr repeat(3,1fr);
+ gap:30px;
+}
+
+.footer h3{
+ margin-bottom:12px;
+}
+
+.footer a{
+ display:block;
+ color:var(--muted);
+ font-size:13px;
+ margin:8px 0;
+}
+
+.copyright{
+ max-width:1250px;
+ margin:auto;
+ padding:20px;
+ border-top:1px solid var(--border);
+ color:var(--muted);
+ font-size:12px;
+}
+
+/* MODAL */
+
+.modal{
+ position:fixed;
+ inset:0;
+ background:rgba(0,0,0,.7);
+ backdrop-filter:blur(8px);
+ display:none;
+ align-items:center;
+ justify-content:center;
+ z-index:2000;
+ padding:20px;
+}
+
+.modal.active{display:flex}
+
+.modal-box{
+ width:min(500px,100%);
+ background:#10243a;
+ border:1px solid var(--border);
+ border-radius:24px;
+ padding:30px;
+}
+
+.modal-box h2{
+ margin-bottom:10px;
+}
+
+.modal-box p{
+ color:var(--muted);
+}
+
+.close{
+ float:left;
+ background:rgba(255,255,255,.08);
+ color:white;
+ border-radius:10px;
+ width:35px;
+ height:35px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+ .hero{
+  grid-template-columns:1fr;
+  padding-top:45px;
+ }
+ .world-card{min-height:300px}
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .featured{grid-template-columns:1fr}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .footer{grid-template-columns:1fr 1fr}
+ .nav-links{display:none}
+}
+
+@media(max-width:550px){
+ .hero h1{font-size:45px}
+ .hero p{font-size:15px}
+ .grid{grid-template-columns:1fr 1fr;gap:10px}
+ .card{padding:16px}
+ .card-icon{width:44px;height:44px}
+ .card h3{font-size:15px}
+ .ai-box{
+  grid-template-columns:1fr;
+  padding:28px;
+ }
+ .section-head{
+  display:block;
+ }
+ .section-head h2{font-size:25px;margin-bottom:5px}
+ .footer{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">🌍 One World</div>
-    <div>AI-powered global living</div>
+<div class="nav">
+
+<a class="logo" href="#">
+<span class="logo-mark">🌍</span>
+<span>One World</span>
+</a>
+
+<nav class="nav-links">
+<a href="#services">الخدمات</a>
+<a href="#travel">السفر</a>
+<a href="#life">الحياة</a>
+<a href="#ai">One World AI</a>
+<a href="#about">عن المنصة</a>
+</nav>
+
+<div class="nav-actions">
+<button class="icon-btn" onclick="openModal('الحساب الشخصي')">👤</button>
+<button class="icon-btn" onclick="openModal('الإشعارات')">🔔</button>
+</div>
+
+</div>
 </header>
 
+
+<main>
+
+<!-- HERO -->
+
 <section class="hero">
-    <h1>One World</h1>
 
-    <p>
-        One integrated platform for travel, work, education,
-        housing, finance, health and global living.
-    </p>
+<div>
 
-    <input
-        class="search"
-        type="text"
-        placeholder="What are you looking for?"
-        id="search"
-    >
+<span class="badge">🌍 منصة عالمية • كل شيء في مكان واحد</span>
+
+<h1>
+العالم كله<br>
+<span class="gradient">في مكان واحد.</span>
+</h1>
+
+<p>
+One World هي منصة تهدف إلى جمع أهم الخدمات والمعلومات والأدوات التي يحتاج إليها الإنسان في حياته وسفره وعمله وتعليمه في تجربة واحدة بسيطة وذكية.
+</p>
+
+<div class="search-box">
+<input id="mainSearch" type="text" placeholder="ماذا تبحث عنه؟ سفر، وظيفة، فندق، دراسة...">
+<button onclick="search()">بحث 🔎</button>
+</div>
+
+<div class="hero-buttons">
+<button class="primary-btn" onclick="document.getElementById('services').scrollIntoView()">استكشف الخدمات</button>
+<button class="secondary-btn" onclick="openModal('One World AI')">اسأل One World AI 🤖</button>
+</div>
+
+</div>
+
+<div class="world-card">
+<div class="globe">🌍</div>
+<div class="floating f1">✈️ Travel</div>
+<div class="floating f2">💼 Jobs</div>
+<div class="floating f3">🎓 Education</div>
+<div class="floating f4">🤖 AI</div>
+</div>
+
 </section>
 
-<section class="services">
 
-    <h2>Explore One World</h2>
+<!-- QUICK -->
 
-    <div class="grid">
-
-        <div class="card" onclick="openService('Travel')">
-            <span class="icon">✈️</span>
-            Travel
-        </div>
-
-        <div class="card" onclick="openService('Hotels')">
-            <span class="icon">🏨</span>
-            Hotels
-        </div>
-
-        <div class="card" onclick="openService('Real Estate')">
-            <span class="icon">🏠</span>
-            Real Estate
-        </div>
-
-        <div class="card" onclick="openService('Jobs')">
-            <span class="icon">💼</span>
-            Jobs
-        </div>
-
-        <div class="card" onclick="openService('Education')">
-            <span class="icon">🎓</span>
-            Education
-        </div>
-
-        <div class="card" onclick="openService('Visas')">
-            <span class="icon">📄</span>
-            Visas
-        </div>
-
-        <div class="card" onclick="openService('Finance')">
-            <span class="icon">💰</span>
-            Finance
-        </div>
-
-        <div class="card" onclick="openService('Transportation')">
-            <span class="icon">🚗</span>
-            Transport
-        </div>
-
-        <div class="card" onclick="openService('Health')">
-            <span class="icon">🏥</span>
-            Health
-        </div>
-
-        <div class="card" onclick="openService('One World AI')">
-            <span class="icon">🤖</span>
-            One World AI
-        </div>
-
-    </div>
+<section>
+<div class="quick">
+<a class="quick-item" href="#travel">✈️ السفر</a>
+<a class="quick-item" href="#services">🏨 الفنادق</a>
+<a class="quick-item" href="#life">💼 الوظائف</a>
+<a class="quick-item" href="#life">🎓 التعليم</a>
+<a class="quick-item" href="#life">🏠 العقارات</a>
+<a class="quick-item" href="#life">🏥 الصحة</a>
+<a class="quick-item" href="#life">💰 المال</a>
+<a class="quick-item" href="#ai">🤖 AI</a>
+</div>
 </section>
+
+
+<!-- MAIN SERVICES -->
+
+<section id="services">
+
+<div class="section-head">
+<div>
+<h2>🌎 كل ما تحتاجه في مكان واحد</h2>
+<p>منصة واحدة لمختلف احتياجات الحياة اليومية.</p>
+</div>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-icon">✈️</div>
+<h3>السفر والرحلات</h3>
+<p>اكتشف الرحلات والوجهات وخطط رحلتك.</p>
+<button onclick="openModal('السفر والرحلات')">استكشف</button>
+</div>
+
+<div class="card">
+<div class="card-icon">🏨</div>
+<h3>الفنادق والإقامة</h3>
+<p>البحث عن الفنادق وأماكن الإقامة.</p>
+<button onclick="openModal('الفنادق والإقامة')">استكشف</button>
+</div>
+
+<div class="card">
+<div class="card-icon">🏠</div>
+<h3>العقارات</h3>
+<p>منازل وشقق وأراضٍ وعقارات حول العالم.</p>
+<button onclick="openModal('العقارات')">استكشف</button>
+</div>
+
+<div class="card">
+<div class="card-icon">💼</div>
+<h3>الوظائف</h3>
+<p>اكتشف فرص العمل وبناء مسارك المهني.</p>
+<button onclick="openModal('الوظائف')">استكشف</button>
+</div>
+
+<div class="card">
+<div class="card-icon">🎓</div>
+<h3>التعليم والمنح</h3>
+<p>جامعات ودورات ومنح وفرص تعليمية.</p>
+<button onclick="openModal('التعليم والمنح')">استكشف</button>
+</div>
+
+<div class="card">
+<div class="card-icon">📄</div>
+<h3>التأشيرات والوثائق</h3>
+<p>معلومات وإرشادات حول التأشيرات والوثائق.</p>
+<button onclick="openModal('التأشيرات والوثائق')">استكشف</button>
+</div>
+
+<div class="card">
+<div class="card-icon">💰</div>
+<h3>المال والميزانية</h3>
+<p>إدارة الميزانية ومعلومات مالية وأدوات حسابية.</p>
+<button onclick="openModal('المال والميزانية')">استكشف</button>
+</div>
+
+<div class="card">
+<div class="card-icon">🚗</div>
+<h3>المواصلات</h3>
+<p>التنقل والخرائط والنقل والخدمات المحلية.</p>
+<button onclick="openModal('المواصلات')">استكشف</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- TRAVEL -->
+
+<section id="travel">
+
+<div class="section-head">
+<div>
+<h2>✈️ مركز السفر العالمي</h2>
+<p>كل أدوات السفر في تجربة واحدة.</p>
+</div>
+</div>
+
+<div class="featured">
+
+<div class="feature-card">
+<div class="big">✈️</div>
+<h3>رحلات الطيران</h3>
+<p>البحث عن الرحلات ومقارنة الخيارات والأسعار عند ربط خدمات الطيران.</p>
+<button class="card button" onclick="openModal('رحلات الطيران')">ابدأ البحث</button>
+</div>
+
+<div class="feature-card">
+<div class="big">🗺️</div>
+<h3>مخطط الرحلة</h3>
+<p>أنشئ خطة سفر تشمل الوجهات والأيام والأنشطة والميزانية.</p>
+<button class="card button" onclick="openModal('مخطط الرحلة')">خطط رحلتك</button>
+</div>
+
+<div class="feature-card">
+<div class="big">🛂</div>
+<h3>مساعد التأشيرات</h3>
+<p>معلومات عامة عن متطلبات السفر والتأشيرات لكل وجهة.</p>
+<button class="card button" onclick="openModal('مساعد التأشيرات')">ابدأ</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- LIFE -->
+
+<section id="life">
+
+<div class="section-head">
+<div>
+<h2>🏙️ الحياة اليومية</h2>
+<p>خدمات تساعدك في العمل والسكن والصحة والتعليم والاحتياجات اليومية.</p>
+</div>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-icon">🏥</div>
+<h3>الصحة</h3>
+<p>معلومات صحية، أطباء، عيادات وخدمات الرعاية المنزلية.</p>
+<button onclick="openModal('الصحة')">فتح القسم</button>
+</div>
+
+<div class="card">
+<div class="card-icon">🛒</div>
+<h3>التسوق</h3>
+<p>منتجات واحتياجات المنزل والأسرة والتسوق الإلكتروني.</p>
+<button onclick="openModal('التسوق')">فتح القسم</button>
+</div>
+
+<div class="card">
+<div class="card-icon">🔧</div>
+<h3>الخدمات المنزلية</h3>
+<p>فنيون وكهربائيون وسباكون وخدمات الصيانة.</p>
+<button onclick="openModal('الخدمات المنزلية')">فتح القسم</button>
+</div>
+
+<div class="card">
+<div class="card-icon">📦</div>
+<h3>التوصيل</h3>
+<p>توصيل الطعام والمنتجات والطرود والخدمات.</p>
+<button onclick="openModal('التوصيل')">فتح القسم</button>
+</div>
+
+<div class="card">
+<div class="card-icon">🧑‍💻</div>
+<h3>العمل الحر</h3>
+<p>أدوات ومعلومات وفرص للعمل المستقل.</p>
+<button onclick="openModal('العمل الحر')">فتح القسم</button>
+</div>
+
+<div class="card">
+<div class="card-icon">📚</div>
+<h3>الدورات</h3>
+<p>تعلم مهارات جديدة وتطوير القدرات.</p>
+<button onclick="openModal('الدورات')">فتح القسم</button>
+</div>
+
+<div class="card">
+<div class="card-icon">👨‍👩‍👧</div>
+<h3>العائلة</h3>
+<p>خدمات وأدوات ومعلومات تساعد الأسرة.</p>
+<button onclick="openModal('العائلة')">فتح القسم</button>
+</div>
+
+<div class="card">
+<div class="card-icon">🛡️</div>
+<h3>الأمان والمساعدة</h3>
+<p>معلومات السلامة ومصادر المساعدة.</p>
+<button onclick="openModal('الأمان والمساعدة')">فتح القسم</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- AI -->
+
+<section class="ai" id="ai">
+
+<div class="ai-box">
+
+<div>
+<h2>🤖 One World AI</h2>
+<p>
+مساعد ذكي مستقبلي يساعد المستخدم على البحث والتخطيط والمقارنة وفهم المعلومات والوصول إلى الخدمات المناسبة.
+</p>
+</div>
+
+<button class="ai-button" onclick="openModal('One World AI')">
+ابدأ مع AI
+</button>
+
+</div>
+
+</section>
+
+
+<!-- MORE -->
+
+<section>
+
+<div class="section-head">
+<div>
+<h2>✨ أكثر من مجرد خدمات</h2>
+<p>منظومة One World يمكن أن تتوسع مع الوقت.</p>
+</div>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-icon">👥</div>
+<h3>المجتمع</h3>
+<p>تواصل ومشاركة الخبرات والأسئلة بين المستخدمين.</p>
+<button onclick="openModal('المجتمع')">استكشف</button>
+</div>
+
+<div class="card">
+<div class="card-icon">📰</div>
+<h3>الأخبار والمعلومات</h3>
+<p>معلومات وأخبار وخدمات معرفية حسب البلد والاهتمامات.</p>
+<button onclick="openModal('الأخبار')">استكشف</button>
+</div>
+
+<div class="card">
+<div class="card-icon">📅</div>
+<h3>الفعاليات</h3>
+<p>مؤتمرات وفعاليات ومعارض وأنشطة محلية وعالمية.</p>
+<button onclick="openModal('الفعاليات')">استكشف</button>
+</div>
+
+<div class="card">
+<div class="card-icon">🧰</div>
+<h3>أدوات ذكية</h3>
+<p>حاسبات ومحوّلات ومخططات وأدوات يومية.</p>
+<button onclick="openModal('الأدوات الذكية')">استكشف</button>
+</div>
+
+<div class="card">
+<div class="card-icon">🌐</div>
+<h3>الدول والمدن</h3>
+<p>اكتشف الدول والمدن والمعلومات الأساسية عنها.</p>
+<button onclick="openModal('الدول والمدن')">استكشف</button>
+</div>
+
+<div class="card">
+<div class="card-icon">⭐</div>
+<h3>المفضلة</h3>
+<p>احفظ الخدمات والأماكن والفرص التي تهمك.</p>
+<button onclick="openModal('المفضلة')">استكشف</button>
+</div>
+
+<div class="card">
+<div class="card-icon">💬</div>
+<h3>الدعم والشكاوى</h3>
+<p>مركز مساعدة للتواصل وحل المشاكل والإبلاغ عنها.</p>
+<button onclick="openModal('الدعم والشكاوى')">استكشف</button>
+</div>
+
+<div class="card">
+<div class="card-icon">🔐</div>
+<h3>الخصوصية والأمان</h3>
+<p>إدارة الحساب والخصوصية وإعدادات الأمان.</p>
+<button onclick="openModal('الخصوصية والأمان')">استكشف</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- STATS -->
+
+<section>
+
+<div class="stats">
+<div class="stat">
+<strong>🌍</strong>
+<span>عالم واحد</span>
+</div>
+
+<div class="stat">
+<strong>∞</strong>
+<span>خدمات قابلة للتوسع</span>
+</div>
+
+<div class="stat">
+<strong>🤖</strong>
+<span>ذكاء اصطناعي</span>
+</div>
+
+<div class="stat">
+<strong>📱</strong>
+<span>مصمم للهواتف</span>
+</div>
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="feature-card">
+
+<div class="big">🌍</div>
+
+<h3>رؤية One World</h3>
+
+<p>
+أن تصبح One World منصة عالمية تساعد الإنسان على الوصول إلى المعلومات والخدمات والفرص التي يحتاجها، مهما كان مكانه في العالم.
+</p>
+
+<br>
+
+<p>
+هذه النسخة هي واجهة البداية. لاحقًا يمكن ربط كل قسم بقاعدة بيانات وواجهات API وشركاء حقيقيين حتى تتحول المنصة من واجهة إلى نظام عالمي متكامل.
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
 
 <footer>
-    © 2026 One World Technologies
+
+<div class="footer">
+
+<div>
+<h3>🌍 One World</h3>
+<p style="color:var(--muted);font-size:13px">
+عالم واحد. خدمات متعددة. تجربة واحدة.
+</p>
+</div>
+
+<div>
+<h3>الخدمات</h3>
+<a href="#travel">السفر</a>
+<a href="#services">الفنادق</a>
+<a href="#life">الوظائف</a>
+<a href="#life">التعليم</a>
+</div>
+
+<div>
+<h3>المساعدة</h3>
+<a href="#" onclick="openModal('مركز المساعدة')">مركز المساعدة</a>
+<a href="#" onclick="openModal('الدعم')">الدعم</a>
+<a href="#" onclick="openModal('الشكاوى')">الشكاوى</a>
+<a href="#" onclick="openModal('الأمان')">الأمان</a>
+</div>
+
+<div>
+<h3>One World</h3>
+<a href="#about">عن المنصة</a>
+<a href="#" onclick="openModal('الخصوصية')">الخصوصية</a>
+<a href="#" onclick="openModal('الشروط')">الشروط</a>
+<a href="#" onclick="openModal('تواصل معنا')">تواصل معنا</a>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 One World — جميع الحقوق محفوظة
+</div>
+
 </footer>
 
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal()">✕</button>
+
+<h2 id="modalTitle">One World</h2>
+
+<p id="modalText">
+هذا القسم جزء من منظومة One World وسيتم ربطه بالخدمات الفعلية وقواعد البيانات وواجهات API في المراحل القادمة.
+</p>
+
+<br>
+
+<button class="primary-btn" onclick="closeModal()">حسنًا</button>
+
+</div>
+
+</div>
+
+
 <script>
-function openService(service) {
 
-    if (service === "Travel") {
-        document.querySelector(".hero").innerHTML = `
-            <h1>✈️ Travel</h1>
-            <p>Plan your next journey with One World.</p>
+function openModal(title){
 
-            <input
-                class="search"
-                type="text"
-                placeholder="Where do you want to go?"
-                id="destination"
-            >
+ document.getElementById("modalTitle").textContent=title;
 
-            <br><br>
+ document.getElementById("modalText").textContent=
+ "قسم " + title +
+ " موجود ضمن بنية One World. الواجهة جاهزة، وسيتم ربط هذا القسم بالخدمات الحقيقية وقواعد البيانات وواجهات API عند تطوير النظام.";
 
-            <button
-                onclick="searchTravel()"
-                style="
-                    padding: 14px 24px;
-                    border: none;
-                    border-radius: 10px;
-                    cursor: pointer;
-                "
-            >
-                Search Trips
-            </button>
-        `;
-
-        document.querySelector(".services").innerHTML = `
-            <h2>✈️ Travel Services</h2>
-
-            <div class="grid">
-
-                <div class="card">
-                    <span class="icon">🌍</span>
-                    Destinations
-                </div>
-
-                <div class="card">
-                    <span class="icon">🏨</span>
-                    Hotels
-                </div>
-
-                <div class="card">
-                    <span class="icon">📄</span>
-                    Visa Information
-                </div>
-
-                <div class="card">
-                    <span class="icon">🧳</span>
-                    Travel Planning
-                </div>
-
-            </div>
-        `;
-
-        return;
-    }
-
-    alert(service + " — Coming soon to One World.");
+ document.getElementById("modal").classList.add("active");
 }
 
-function searchTravel() {
-    const destination =
-        document.getElementById("destination").value.trim();
-
-    if (!destination) {
-        alert("Please enter a destination.");
-        return;
-    }
-
-    document.querySelector(".services").innerHTML = `
-        <h2>🌍 Travel options for ${destination}</h2>
-
-        <div class="grid">
-
-            <div class="card">
-                <span class="icon">✈️</span>
-                <h3>Flights</h3>
-                <p>Find flight options to ${destination}.</p>
-                <button onclick="alert('Flight search will be connected soon.')">
-                    Search Flights
-                </button>
-            </div>
-
-            <div class="card">
-                <span class="icon">🏨</span>
-                <h3>Hotels</h3>
-                <p>Explore hotels in ${destination}.</p>
-                <button onclick="alert('Hotel search will be connected soon.')">
-                    Find Hotels
-                </button>
-            </div>
-
-            <div class="card">
-                <span class="icon">📄</span>
-                <h3>Visa Information</h3>
-                <p>Check visa information for ${destination}.</p>
-                <button onclick="alert('Visa information will be connected soon.')">
-                    Check Visa
-                </button>
-            </div>
-
-            <div class="card">
-                <span class="icon">🧳</span>
-                <h3>Travel Planning</h3>
-                <p>Create a travel plan for ${destination}.</p>
-                <button onclick="alert('Travel planning will be connected soon.')">
-                    Plan Trip
-                </button>
-            </div>
-
-        </div>
-    `;
+function closeModal(){
+ document.getElementById("modal").classList.remove("active");
 }
 
-    document.getElementById("search").addEventListener("input", function () {
-        console.log("Searching for:", this.value);
-    });
+function search(){
+
+ const value=document.getElementById("mainSearch").value.trim();
+
+ if(!value){
+   openModal("البحث");
+   document.getElementById("modalText").textContent=
+   "اكتب ما تبحث عنه مثل: فندق في القاهرة، وظيفة، جامعة، رحلة إلى إسبانيا، عقار أو دورة.";
+   return;
+ }
+
+ openModal("نتائج البحث");
+
+ document.getElementById("modalText").textContent=
+ "بحث One World عن: " + value +
+ " — محرك البحث المتكامل سيتم ربطه لاحقًا بمصادر وواجهات الخدمات.";
+
+}
+
+document.getElementById("mainSearch").addEventListener("keydown",function(e){
+ if(e.key==="Enter") search();
+});
+
+document.getElementById("modal").addEventListener("click",function(e){
+ if(e.target===this) closeModal();
+});
+
 </script>
 
 </body>

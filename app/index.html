@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One World</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #172033;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .hero {
+            padding: 45px 20px;
+            text-align: center;
+            background: #172033;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin: 0 0 15px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.6;
+            margin: 0 auto 25px;
+            max-width: 600px;
+        }
+
+        .search {
+            width: 100%;
+            max-width: 600px;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .services {
+            padding: 30px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .services h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px 12px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .icon {
+            font-size: 32px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🌍 One World</div>
+    <div>AI-powered global living</div>
+</header>
+
+<section class="hero">
+    <h1>One World</h1>
+
+    <p>
+        One integrated platform for travel, work, education,
+        housing, finance, health and global living.
+    </p>
+
+    <input
+        class="search"
+        type="text"
+        placeholder="What are you looking for?"
+        id="search"
+    >
+</section>
+
+<section class="services">
+
+    <h2>Explore One World</h2>
+
+    <div class="grid">
+
+        <div class="card" onclick="openService('Travel')">
+            <span class="icon">✈️</span>
+            Travel
+        </div>
+
+        <div class="card" onclick="openService('Hotels')">
+            <span class="icon">🏨</span>
+            Hotels
+        </div>
+
+        <div class="card" onclick="openService('Real Estate')">
+            <span class="icon">🏠</span>
+            Real Estate
+        </div>
+
+        <div class="card" onclick="openService('Jobs')">
+            <span class="icon">💼</span>
+            Jobs
+        </div>
+
+        <div class="card" onclick="openService('Education')">
+            <span class="icon">🎓</span>
+            Education
+        </div>
+
+        <div class="card" onclick="openService('Visas')">
+            <span class="icon">📄</span>
+            Visas
+        </div>
+
+        <div class="card" onclick="openService('Finance')">
+            <span class="icon">💰</span>
+            Finance
+        </div>
+
+        <div class="card" onclick="openService('Transportation')">
+            <span class="icon">🚗</span>
+            Transport
+        </div>
+
+        <div class="card" onclick="openService('Health')">
+            <span class="icon">🏥</span>
+            Health
+        </div>
+
+        <div class="card" onclick="openService('One World AI')">
+            <span class="icon">🤖</span>
+            One World AI
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 One World Technologies
+</footer>
+
+<script>
+function openService(service) {
+
+    if (service === "Travel") {
+        document.querySelector(".hero").innerHTML = `
+            <h1>✈️ Travel</h1>
+            <p>Plan your next journey with One World.</p>
+
+            <input
+                class="search"
+                type="text"
+                placeholder="Where do you want to go?"
+                id="destination"
+            >
+
+            <br><br>
+
+            <button
+                onclick="searchTravel()"
+                style="
+                    padding: 14px 24px;
+                    border: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                "
+            >
+                Search Trips
+            </button>
+        `;
+
+        document.querySelector(".services").innerHTML = `
+            <h2>✈️ Travel Services</h2>
+
+            <div class="grid">
+
+                <div class="card">
+                    <span class="icon">🌍</span>
+                    Destinations
+                </div>
+
+                <div class="card">
+                    <span class="icon">🏨</span>
+                    Hotels
+                </div>
+
+                <div class="card">
+                    <span class="icon">📄</span>
+                    Visa Information
+                </div>
+
+                <div class="card">
+                    <span class="icon">🧳</span>
+                    Travel Planning
+                </div>
+
+            </div>
+        `;
+
+        return;
+    }
+
+    alert(service + " — Coming soon to One World.");
+}
+
+function searchTravel() {
+    const destination =
+        document.getElementById("destination").value.trim();
+
+    if (!destination) {
+        alert("Please enter a destination.");
+        return;
+    }
+
+    document.querySelector(".services").innerHTML = `
+        <h2>🌍 Travel options for ${destination}</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <span class="icon">✈️</span>
+                <h3>Flights</h3>
+                <p>Find flight options to ${destination}.</p>
+                <button onclick="alert('Flight search will be connected soon.')">
+                    Search Flights
+                </button>
+            </div>
+
+            <div class="card">
+                <span class="icon">🏨</span>
+                <h3>Hotels</h3>
+                <p>Explore hotels in ${destination}.</p>
+                <button onclick="alert('Hotel search will be connected soon.')">
+                    Find Hotels
+                </button>
+            </div>
+
+            <div class="card">
+                <span class="icon">📄</span>
+                <h3>Visa Information</h3>
+                <p>Check visa information for ${destination}.</p>
+                <button onclick="alert('Visa information will be connected soon.')">
+                    Check Visa
+                </button>
+            </div>
+
+            <div class="card">
+                <span class="icon">🧳</span>
+                <h3>Travel Planning</h3>
+                <p>Create a travel plan for ${destination}.</p>
+                <button onclick="alert('Travel planning will be connected soon.')">
+                    Plan Trip
+                </button>
+            </div>
+
+        </div>
+    `;
+}
+
+    document.getElementById("search").addEventListener("input", function () {
+        console.log("Searching for:", this.value);
+    });
+</script>
+
+</body>
+</html>
